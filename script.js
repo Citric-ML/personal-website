@@ -1,47 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const skillTrack = document.querySelector(".skill-track");
-  const skillMarquee = document.querySelector(".skill-marquee");
-  
-  if (skillTrack && skillMarquee) {
-    let x = 0;
-    let time = 0;
-  
-    const baseSpeed = 0.4;
-    let currentSpeed = baseSpeed;
-    let targetSpeed = baseSpeed;
-  
-    const bobAmplitude = 6;
-    const bobFrequency = 0.03;
-  
-    function animateSkillMarquee() {
-      currentSpeed += (targetSpeed - currentSpeed) * 0.05;
-  
-      x -= currentSpeed;
-      time += bobFrequency;
-  
-      const y = Math.sin(time) * bobAmplitude;
-      skillTrack.style.transform = `translate(${x}px, ${y}px)`;
-  
-      // wrap smoothly
-      const halfWidth = skillTrack.scrollWidth / 2;
-      if (Math.abs(x) >= halfWidth) x = 0;
-  
-      requestAnimationFrame(animateSkillMarquee);
-    }
-  
-    skillMarquee.addEventListener("mouseenter", () => {
-      targetSpeed = 0;
-    });
-  
-    skillMarquee.addEventListener("mouseleave", () => {
-      targetSpeed = baseSpeed;
-    });
-  
-    animateSkillMarquee();
-  }
-
-
   /* ===============================
      FLOATING TEXT BLOCKS
      =============================== */

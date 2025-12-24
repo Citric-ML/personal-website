@@ -157,7 +157,7 @@ const observer = new IntersectionObserver(entries => {
 
     observer.unobserve(win);
   });
-}, { threshold: 0.4 });
+}, { threshold: 0.05 });
 
 windows.forEach(win => observer.observe(win));
 

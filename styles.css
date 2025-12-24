@@ -193,6 +193,7 @@ li {
 .window ul {
   list-style: none;
   margin-top: 1.5rem;
+  max-width: calc(100% - 200px);
 }
 
 .window li {
@@ -211,10 +212,6 @@ li {
   0 0 6px rgba(0, 255, 0, 0.15);
   opacity: 0;
   clip-path: inset(0 100% 0 0); /* hide from right */
-}
-.window ul {
-  margin-top: 1.5rem;
-  max-width: calc(100% - 200px); /* same as above */
 }
 /* animate reveal */
 .window.typing .type-line {
@@ -253,7 +250,9 @@ li {
   color: white;
   text-align: center;
 }
-
+#dog p{
+  max-width: calc(100% - 200px);
+}
 #matrix-bg {
   position: fixed;
   inset: 0;
@@ -366,11 +365,6 @@ li {
 
   mix-blend-mode: multiply;
 }
-/* RGB SUBPIXEL SEPARATION */
-.rgb {
-  will-change: transform, filter;
-}
-
 /* NAVIGATION */
 .site-nav {
   position: fixed;

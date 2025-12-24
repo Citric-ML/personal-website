@@ -251,7 +251,7 @@ li {
   text-align: center;
 }
 #dog p{
-  max-width: calc(100% - 200px);
+  max-width: calc(100% - 180px);
 }
 #matrix-bg {
   position: fixed;
@@ -472,4 +472,5 @@ li {
   color: #baffba;
   text-align: center;
 }
+
 

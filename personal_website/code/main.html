@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to an external CSS file -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <nav class="site-nav">
+    <a href="#hero">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#skills">SKILLS</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#dog">DOG</a>
+    <a href="#contacts">CONTACTS</a>
+  </nav>
+  <canvas id="matrix-bg"></canvas>
+  <div class="crt-shell">
+    
+    <div class="crt-bloom"></div>
+    <div class="crt-overlay"></div>
+
+    <!-- HERO / FRONT PAGE -->
+    <section id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <h1>Welcome to My Website</h1>
+        <p>Building, experimenting, and exploring the digital frontier.</p>
+      </div>
+    </section>
+  
+    <main>
+      <!-- Intro -->
+      <section id="intro" class="float-block">
+        <div class="window">
+          <h2>Why?</h2>
+          <p>
+            I find that too often personal websites are monotone and bland, so this one will be different. 
+            Here, you’ll find a collection of my achievements and other things, such as my dog.
+          </p>
+        </div>
+      </section>
+      
+      <!-- About Me -->
+      <section id="about"class="float-block">
+        <div class="window">
+          <h2>But first, a little about me</h2>
+        
+          <ul>
+            <li>I’ve lived in NYC all my life</li>
+            <li>I’m currently attending high school</li>
+            <li>I enjoy building systems, I always have</li>
+            <li>I’m still trying to figure out what to put on a personal website :/</li>
+          </ul>
+        </div>
+      </section>
+      
+      <!-- Skills -->
+      <section id="skills" class="float-block">
+        <div class="window">
+          <h2>Skills</h2>
+          <p>I've picked up several skills throughout my career, such as:</p>
+      
+          <div class="skill-marquee">
+            <div class="skill-track">
+              <div class="skill-item">
+                <img src="[image-link]" alt="Skill logo">
+              </div>
+              <div class="skill-item">
+                <img src="[image-link]" alt="Skill logo">
+              </div>
+              <!-- Repeat items -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+  
+      
+      <!-- Projects -->
+      <section id="projects"class="float-block">
+        <!-- 
+          Primary content section.
+          Interactive project cards or shapes that respond to scroll.
+          Each project should link to a deeper explanation(like GitHub).
+        -->
+        <div class="window">
+        <h2>Projects</h2>
+        <p>
+          I spend much of my time on projects, mostly related to machine learning.
+          I've been doing this for quite a while, and have no plans on stopping.
+          So below, I have a live-updated list of everything that I've done, feel free to take a look:
+        </p>
+        </div>
+      </section>
+      
+      <!-- Featured Project: Hydranet -->
+      <section id="hydranet"class="float-block">
+        <div class="window float-block">
+        <h2>Hydranet: AI for Fingernail Condition Detection</h2>
+      
+        <p>
+          Hydranet is a deep learning model designed to analyze fingernail images and
+          classify potential conditions. It utilizes convolutional, regression, and
+          classification networks to learn subtle visual features like hue,
+          streak intensity, and streak ratios of the nail.
+        </p>
+      
+        <p>
+          The project was my first major ML architecture, and uses a variety of problem-solving techniques
+          to inspect valuable information from something so seemingly simple, as a fingernail.
+        </p>
+        </div>
+      </section>
+      
+      <!-- Future Work -->
+      <section id="next">
+        <div class="window">
+        <h2>What I plan to do next</h2>
+      
+        <p>
+          I’m currently exploring ways to push these ideas further — refining existing
+          models, experimenting with new architectures, and building projects that sit
+          at the intersection of machine learning, visualization, and real-world use
+          cases.
+        </p>
+        </div>
+      </section>
+      
+      <!-- Personal -->
+      <section id="dog">
+        <h2>My dog</h2>
+      
+        <!-- 
+          This section is intentionally non-technical.
+          Images, a short caption, or a light sentence or two works well here.
+        -->
+      </section>
+      <!-- Contacts -->
+      <section id="contacts" class="float-block">
+        <div class="window">
+          <h2>Contact Me</h2>
+          <p>Feel free to reach out or check out my profiles:</p>
+      
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/YOUR-LINK" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.youtube.com/@YOUR-CHANNEL" target="_blank" rel="noopener noreferrer">YouTube</a>
+          </div>
+        </div>
+      </section>
+
+      <script src="script.js" defer></script>
+    </main>
+  </div>
+</body>
+
+</html>

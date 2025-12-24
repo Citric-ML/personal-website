@@ -1,0 +1,481 @@
+.courier-prime-regular {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.courier-prime-bold {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.courier-prime-regular-italic {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.courier-prime-bold-italic {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+/* ---------- Base Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Root Variables ---------- */
+:root {
+  --max-width: 900px;
+  --section-padding: 4rem;
+  --text-color: #fff;
+  --bg-color: #111;
+}
+html, body {
+  background: #000;
+}
+
+/* ---------- Body ---------- */
+body {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: normal;
+
+  color: var(--text-color);
+  background-color: var(--bg-color);
+
+  display: block;
+  justify-content: center;
+}
+
+/* ---------- Main Wrapper ---------- */
+main {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 2rem 1.5rem;
+  margin: 0 auto;
+}
+
+/* ---------- Sections ---------- */
+section {
+  padding: var(--section-padding) 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+}
+
+
+/* Optional: subtle divider feel without visible lines */
+section:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* ---------- Headings ---------- */
+h2 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- Paragraphs ---------- */
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ---------- Lists ---------- */
+ul {
+  list-style: none;
+  margin-top: 1.5rem;
+}
+
+li {
+  margin: 0.75rem 0;
+  font-size: 0.95rem;
+}
+
+/* ---------- Font Utility Classes ---------- */
+.courier-prime-regular {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.courier-prime-bold {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.courier-prime-regular-italic {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.courier-prime-bold-italic {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* ---------- Responsive Tweaks ---------- */
+@media (max-width: 600px) {
+  :root {
+    --section-padding: 3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ---------- Floating Text Blocks ---------- */
+
+.float-block {
+  will-change: transform, opacity;
+  transition: opacity 0.6s ease;
+}
+/* ---------- Windowed Sections ---------- */
+
+.windowed {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* The window itself */
+.window {
+  position: relative;
+  background: #000;
+  color: #fff;
+  pointer-events: auto;
+  padding: 2rem 2.5rem;
+  max-width: 720px;
+  outline: 5px solid white;
+  width: 520px;          /* I'll adjust this later */
+  max-width: 90vw; 
+
+  border-radius: 6px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+
+  will-change: transform;
+}
+
+
+/* Typography inside windows */
+.window h1,
+.window h2,
+.window h4,
+.window p,
+.window li {
+  color: #fff;
+  max-width: calc(100% - 10px); /* leave ~180px for child window */
+  /* optional: add padding to right to create extra gap */
+  padding-right: 1rem;
+  word-wrap: break-word;
+}
+
+/* Lists inside windows */
+.window ul {
+  list-style: none;
+  margin-top: 1.5rem;
+}
+
+.window li {
+  margin: 0.75rem 0;
+}
+/* typing line */
+.type-line {
+  display: inline-block;
+  position: relative;
+
+  white-space: normal;   /* allow wrapping */
+  overflow: hidden;
+  color: #e6ffe6;
+  text-shadow:
+  0 0 2px rgba(0, 255, 0, 0.25),
+  0 0 6px rgba(0, 255, 0, 0.15);
+  opacity: 0;
+  clip-path: inset(0 100% 0 0); /* hide from right */
+}
+.window ul {
+  margin-top: 1.5rem;
+  max-width: calc(100% - 200px); /* same as above */
+}
+/* animate reveal */
+.window.typing .type-line {
+  opacity: 1;
+  animation-name: typeReveal;
+  animation-fill-mode: forwards;
+  animation-timing-function: steps(30, end);
+}
+
+@keyframes typeReveal {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+/*cursor styling*/
+.typing-cursor {
+  display: inline-block;
+  margin-left: 4px;
+  animation: cursorBlink 1s infinite;
+}
+@keyframes cursorBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Full viewport hero */
+#hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+
+#matrix-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;             /* bottom */
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity:1;
+}
+
+
+/*CRT overlay*/
+.crt-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.05) 0px,
+      rgba(100,255,100,0.05) 1px,
+      rgba(0,0,0,0) 2px,
+      rgba(0,0,0,0) 4px
+    );
+
+  opacity: 0;
+  mix-blend-mode: mix-blend-mode;
+
+  animation: crtFlicker 6s infinite;
+}
+
+@keyframes crtFlicker {
+  0%, 100% { opacity: 0.22; }
+  50% { opacity: 0.8; }
+}
+/* ELECTRON BEAM BLOOM */
+.crt-bloom {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(0, 255, 120, 0.12),
+      rgba(0, 255, 120, 0.05) 40%,
+      rgba(0, 0, 0, 0) 70%
+    );
+
+  filter:
+    blur(8px)
+    contrast(1.1)
+    brightness(1.05);
+
+  mix-blend-mode: screen;
+  opacity: 0.35;
+
+  animation: bloomPulse 4.5s ease-in-out infinite;
+}
+
+@keyframes bloomPulse {
+  0%, 100% { opacity: 0.28; }
+  50%      { opacity: 0.38; }
+}
+/* HORIZONTAL BEAM BLEED */
+.crt-bloom::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    repeating-linear-gradient(
+      to right,
+      rgba(0,255,120,0.08) 0px,
+      rgba(0,255,120,0.08) 1px,
+      rgba(0,0,0,0) 3px,
+      rgba(0,0,0,0) 6px
+    );
+
+  opacity: 0.15;
+  mix-blend-mode: screen;
+}
+/* CRT SHELL (curvature) */
+.crt-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  transform: scale(1.02);
+}
+
+/* subtle barrel distortion illusion */
+.crt-shell::before {
+  content: "";
+  position: fixed;
+  inset: -6%;
+
+  pointer-events: none;
+  z-index: 10000;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255,255,255,0.04),
+      rgba(0,0,0,0.45) 65%,
+      rgba(0,0,0,0.85) 100%
+    );
+
+  mix-blend-mode: multiply;
+}
+/* RGB SUBPIXEL SEPARATION */
+.rgb {
+  will-change: transform, filter;
+}
+
+/* NAVIGATION */
+.site-nav {
+  position: fixed;
+  top: 16px;
+  left: 20px;
+  z-index: 10001;
+
+  display: flex;
+  gap: 1.2rem;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+}
+
+.site-nav a {
+  color: rgba(200,255,200,0.75);
+  text-decoration: none;
+  position: relative;
+
+  transition: color 0.2s ease;
+}
+
+.site-nav a::after {
+  content: "_";
+  position: absolute;
+  right: -0.8em;
+  opacity: 0;
+}
+
+.site-nav a:hover {
+  color: #baffba;
+}
+
+.site-nav a:hover::after {
+  opacity: 1;
+}
+/* ---------- Contacts Section ---------- */
+.contact-links {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  color: rgba(200, 255, 200, 0.85);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.contact-links a::after {
+  content: "_";
+  position: absolute;
+  left: 100%;
+  bottom: -0.1em;
+  opacity: 0;
+}
+
+.contact-links a:hover {
+  color: #baffba;
+}
+
+.contact-links a:hover::after {
+  opacity: 1;
+}
+/* ---------- Child Window ---------- */
+.child-window {
+  position: absolute;
+  width: 150px;               /* adjust as needed */
+  background: #111;
+  border: 3px solid white;
+  border-radius: 6px;
+  padding: 0.5rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  z-index: 1;                 /* behind main window content */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  /* Default corner: bottom-right, slightly outside bounds */
+  bottom: -30px;              /* negative offsets move it below/side */
+  right: -30px;
+}
+
+/* Random corner variants with slight "peek outside" offsets */
+.child-window.top-left { top: -30px; left: -30px; bottom: auto; right: auto; }
+.child-window.top-right { top: -30px; right: -30px; bottom: auto; left: auto; }
+.child-window.bottom-left { bottom: -30px; left: -30px; top: auto; right: auto; }
+.child-window.bottom-right { bottom: -30px; right: -30px; top: auto; left: auto; }
+
+/* Child image */
+.child-window img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Caption */
+.child-caption {
+  font-size: 0.75rem;
+  color: #baffba;
+  text-align: center;
+}
+
